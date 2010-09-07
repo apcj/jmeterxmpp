@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<module type="JAVA_MODULE" version="4">
+  <component name="NewModuleRootManager" inherit-compiler-output="true">
+    <exclude-output />
+    <content url="file://$MODULE_DIR$" />
+    <orderEntry type="inheritedJdk" />
+    <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="jmeterxmpp" />
+    <orderEntry type="module-library">
+      <library name="JMeterInstallation">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/htmllexer-2.0-20060923.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/excalibur-logger-1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/xml-apis-1.3.04.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/xstream-1.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/oro-2.0.8.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/commons-io-1.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_http.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/excalibur-datasource-1.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_jms.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_tcp.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/logkit-2.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/commons-net-1.4.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/serializer-2.7.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/activation-1.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/jdom-1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/mail-1.4.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/api/bcmail-jdk15-1.45.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/jtidy-r938.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_jdbc.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/xpp3_min-1.1.4c.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_java.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/commons-collections-3.2.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/xalan-2.7.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/jCharts-0.7.5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_components.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/js-1.6R5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/commons-httpclient-3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/commons-codec-1.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/xmlgraphics-commons-1.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/excalibur-instrument-1.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_junit.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/api/bcprov-jdk15-1.45.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/commons-jexl-1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_functions.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_report.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/htmlparser-2.0-20060923.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/bsf-api-3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/doc/velocity-1.6.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_ldap.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/bshclient.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/jorphan.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_mail.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/soap-2.3.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/commons-lang-2.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/bsf-2.4.0.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/avalon-framework-4.1.4.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_core.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/commons-logging-1.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/excalibur-pool-1.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/geronimo-jms_1.1_spec-1.1.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/xercesImpl-2.9.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/bsh-2.0b5.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/junit-4.8.1.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_monitors.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/lib/ext/ApacheJMeter_ftp.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../jmeter/bin/ApacheJMeter.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+  </component>
+</module>
+

@@ -43,6 +43,16 @@
         <SOURCES />
       </library>
     </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library name="smack">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/required/smack.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/required/smackx.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>
 

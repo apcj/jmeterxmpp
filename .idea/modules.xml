@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/jmeterruntime/jmeterruntime.iml" filepath="$PROJECT_DIR$/jmeterruntime/jmeterruntime.iml" />
       <module fileurl="file://$PROJECT_DIR$/jmeterxmpp.iml" filepath="$PROJECT_DIR$/jmeterxmpp.iml" />
     </modules>
   </component>
