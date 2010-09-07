@@ -7,47 +7,22 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/ApacheJMeter.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/ApacheJMeter_core.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/ApacheJMeter_components.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/lib/ApacheJMeter_functions.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
     <orderEntry type="module-library" exported="">
       <library name="smack">
         <CLASSES>
           <root url="jar://$MODULE_DIR$/lib/required/smack.jar!/" />
           <root url="jar://$MODULE_DIR$/lib/required/smackx.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="jmeterprovided">
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/lib/provided/ApacheJMeter_components.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/provided/ApacheJMeter_functions.jar!/" />
+          <root url="jar://$MODULE_DIR$/lib/provided/ApacheJMeter_core.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

@@ -72,7 +72,11 @@
       <file leaf-file-name="XmppController.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/jmeterxmpp/plugin/XmppController.java">
           <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
             <state line="31" column="53" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.43881857">
+=======
+            <state line="38" column="26" selection-start="1583" selection-end="1583" vertical-scroll-proportion="0.3928096">
+>>>>>>> 12a549f736dc0d9952e7021767bb3c78938cc434
               <folding />
             </state>
           </provider>
@@ -233,6 +237,10 @@
           </PATH>
         </subPane>
       </pane>
+<<<<<<< HEAD
+=======
+      <pane id="Favorites" />
+>>>>>>> 12a549f736dc0d9952e7021767bb3c78938cc434
       <pane id="Scope" />
       <pane id="PackagesPane" />
       <pane id="Favorites" />
@@ -240,7 +248,11 @@
   </component>
   <component name="PropertiesComponent">
     <property name="GoToFile.includeJavaFiles" value="false" />
+<<<<<<< HEAD
     <property name="project.structure.last.edited" value="Global Libraries" />
+=======
+    <property name="project.structure.last.edited" value="Modules" />
+>>>>>>> 12a549f736dc0d9952e7021767bb3c78938cc434
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="OverrideImplement.combined" value="true" />
@@ -257,7 +269,7 @@
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.JMeter External">
+  <component name="RunManager">
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
       <option name="SERVER_MODE" value="false" />
@@ -410,7 +422,11 @@
     <supportedVersion>125</supportedVersion>
   </component>
   <component name="ToolWindowManager">
+<<<<<<< HEAD
     <frame x="6" y="22" width="1420" height="860" extended-state="0" />
+=======
+    <frame x="1" y="22" width="1440" height="874" extended-state="0" />
+>>>>>>> 12a549f736dc0d9952e7021767bb3c78938cc434
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -421,9 +437,15 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+<<<<<<< HEAD
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24945295" sideWeight="0.66110396" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32984293" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+=======
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24946082" sideWeight="0.66110396" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32991013" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+>>>>>>> 12a549f736dc0d9952e7021767bb3c78938cc434
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -475,7 +497,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/jmeterxmpp/plugin/XmppController.java">
       <provider selected="true" editor-type-id="text-editor">
+<<<<<<< HEAD
         <state line="31" column="53" selection-start="1304" selection-end="1304" vertical-scroll-proportion="0.43881857">
+=======
+        <state line="38" column="26" selection-start="1583" selection-end="1583" vertical-scroll-proportion="0.3928096">
+>>>>>>> 12a549f736dc0d9952e7021767bb3c78938cc434
           <folding />
         </state>
       </provider>
