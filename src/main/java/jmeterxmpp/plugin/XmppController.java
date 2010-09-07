@@ -11,6 +11,16 @@ public class XmppController extends GenericController implements TestBean, TestL
 
     private String xmppServerAddress;
 
+    private String destinationUser;
+
+    public String getDestinationUser() {
+        return destinationUser;
+    }
+
+    public void setDestinationUser(String destinationUser) {
+        this.destinationUser = destinationUser;
+    }
+
     public String getXmppServerAddress() {
         return xmppServerAddress;
     }
@@ -21,14 +31,14 @@ public class XmppController extends GenericController implements TestBean, TestL
 
     public void testStarted() {
         System.out.println("Test started!!");
-        XMPPConnection connection = new XMPPConnection("Alistair-Jones-MacBook-Pro.local");
+        XMPPConnection connection = new XMPPConnection(xmppServerAddress);
         try {
             connection.connect();
-            SASLAuthentication.supportSASLMechanism("PLAIN", 0);
+//            SASLAuthentication.supportSASLMechanism("PLAIN", 0);
 //            connection.getAccountManager().createAccount("jmeter", "jmeter");
-            connection.login("jmeter", "jmeter");
+            connection.login("jmeter@jalewis.thoughtworks.com", "jmeter");
             ChatManager chatmanager = connection.getChatManager();
-            Chat newChat = chatmanager.createChat("alistair@Alistair-Jones-MacBook-Pro.local", new MessageListener() {
+            Chat newChat = chatmanager.createChat(destinationUser, new MessageListener() {
                 public void processMessage(Chat chat, Message message) {
                     System.out.println("Received message: " + message);
                 }
