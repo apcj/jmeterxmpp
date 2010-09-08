@@ -18,6 +18,7 @@ public class XmppClient {
                     System.out.println("Received message: " + message);
                 }
             });
+
         } catch (XMPPException e) {
             throw new RuntimeException(e);
         }
