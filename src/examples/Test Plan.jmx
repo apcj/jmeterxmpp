@@ -27,8 +27,8 @@
       </ThreadGroup>
       <hashTree>
         <jmeterxmpp.plugin.XmppController guiclass="TestBeanGUI" testclass="jmeterxmpp.plugin.XmppController" testname="XMPP Controller" enabled="true">
-          <stringProp name="xmppServerAddress">jalewis.thoughtworks.com</stringProp>
-          <stringProp name="destinationUser">boicy@jalewis.thoughtworks.com</stringProp>
+          <stringProp name="xmppServerAddress">alistair-jones-macbook-pro.local</stringProp>
+          <stringProp name="destinationUser">console@alistair-jones-macbook-pro.local</stringProp>
         </jmeterxmpp.plugin.XmppController>
         <hashTree/>
         <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">
@@ -82,7 +82,7 @@
           <stringProp name="HTTPSampler.response_timeout"></stringProp>
           <stringProp name="HTTPSampler.protocol"></stringProp>
           <stringProp name="HTTPSampler.contentEncoding"></stringProp>
-          <stringProp name="HTTPSampler.path">/basic</stringProp>
+          <stringProp name="HTTPSampler.path">/maths</stringProp>
           <stringProp name="HTTPSampler.method">GET</stringProp>
           <boolProp name="HTTPSampler.follow_redirects">true</boolProp>
           <boolProp name="HTTPSampler.auto_redirects">false</boolProp>

@@ -14,8 +14,9 @@ public class XmppController extends GenericController implements TestBean, TestL
     private String xmppServerAddress;
     private String destinationUser;
 
-    private static XMPPConnection connection;
-    private static Chat chat;
+    private long lastReportingTime;
+
+    private static XmppClient xmppClient = new XmppClient();
 
     public String getDestinationUser() {
         return destinationUser;
@@ -34,8 +35,8 @@ public class XmppController extends GenericController implements TestBean, TestL
     }
 
     public void testStarted() {
-        connect();
-        sendMessage("Test Started");
+        xmppClient.connect(xmppServerAddress, destinationUser);
+        xmppClient.sendMessage("Test Started");
     }
 
     public void testStarted(String host) {
@@ -43,8 +44,8 @@ public class XmppController extends GenericController implements TestBean, TestL
     }
 
     public void testEnded() {
-        sendMessage("Test ended");
-        disconnect();
+        xmppClient.sendMessage("Test ended");
+        xmppClient.disconnect();
     }
 
     public void testEnded(String host) {
@@ -56,42 +57,16 @@ public class XmppController extends GenericController implements TestBean, TestL
 
     public void sampleOccurred(SampleEvent sampleEvent) {
         long sampleTime = sampleEvent.getResult().getEndTime() - sampleEvent.getResult().getStartTime();
-        sendMessage("sample took - " + sampleTime + " ms");
+        xmppClient.sendMessage(String.valueOf(sampleTime));
     }
 
     public void sampleStarted(SampleEvent sampleEvent) {
-        sendMessage("sample started");
+        xmppClient.sendMessage("sample started");
     }
 
     public void sampleStopped(SampleEvent sampleEvent) {
-        sendMessage("sample stopped");
+        xmppClient.sendMessage("sample stopped");
     }
 
-    private void connect() {
-        this.connection = new XMPPConnection(xmppServerAddress);
-        try {
-            connection.connect();
-            connection.login("jmeter", "jmeter");
-            ChatManager chatmanager = connection.getChatManager();
-            chat = chatmanager.createChat(destinationUser, new MessageListener() {
-                public void processMessage(Chat chat, Message message) {
-                    System.out.println("Received message: " + message);
-                }
-            });
-        } catch (XMPPException e) {
-            throw new RuntimeException(e);
-        }
-    }
 
-    private void sendMessage(String message) {
-        try {
-            chat.sendMessage(message);
-        } catch (XMPPException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    private void disconnect() {
-        connection.disconnect();
-    }
 }
