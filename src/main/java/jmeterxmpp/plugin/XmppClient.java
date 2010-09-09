@@ -16,7 +16,7 @@ public class XmppClient {
             
             multiUserChat = new MultiUserChat(connection, chatroomName);
             multiUserChat.join("jmeter@" + xmppServerAddress, "jmeter");
-            
+
         } catch (XMPPException e) {
             throw new RuntimeException(e);
         }
@@ -31,6 +31,7 @@ public class XmppClient {
     }
 
     public void disconnect() {
+        multiUserChat.leave();
         connection.disconnect();
     }
 }
