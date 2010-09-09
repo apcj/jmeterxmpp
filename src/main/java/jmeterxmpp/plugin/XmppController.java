@@ -6,15 +6,19 @@ import org.apache.jmeter.samplers.SampleEvent;
 import org.apache.jmeter.samplers.SampleListener;
 import org.apache.jmeter.testbeans.TestBean;
 import org.apache.jmeter.testelement.TestListener;
+import org.apache.jmeter.visualizers.SamplingStatCalculator;
 import org.jivesoftware.smack.*;
 import org.jivesoftware.smack.packet.Message;
 
 public class XmppController extends GenericController implements TestBean, TestListener, SampleListener {
 
+    private static final int REPORTING_INTERVAL = 1000;
+    private static final String STATS_LABEL = "STATS";
+
     private String xmppServerAddress;
     private String destinationUser;
 
-    private long lastReportingTime;
+    private SamplingStatCalculator samplingStatCalculator;
 
     private static XmppClient xmppClient = new XmppClient();
 
@@ -56,8 +60,13 @@ public class XmppController extends GenericController implements TestBean, TestL
     }
 
     public void sampleOccurred(SampleEvent sampleEvent) {
-        long sampleTime = sampleEvent.getResult().getEndTime() - sampleEvent.getResult().getStartTime();
-        xmppClient.sendMessage(String.valueOf(sampleTime));
+        if (samplingStatCalculator == null) {
+            samplingStatCalculator = new SamplingStatCalculator(STATS_LABEL);
+        } else if (samplingStatCalculator.getElapsed() > REPORTING_INTERVAL) {
+            xmppClient.sendMessage(String.valueOf(samplingStatCalculator.getRate()));
+            samplingStatCalculator = new SamplingStatCalculator(STATS_LABEL);
+        }
+        samplingStatCalculator.addSample(sampleEvent.getResult());
     }
 
     public void sampleStarted(SampleEvent sampleEvent) {

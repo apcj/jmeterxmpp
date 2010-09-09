@@ -64,7 +64,25 @@
           <root url="jar://$MODULE_DIR$/../../jmeter/bin/ApacheJMeter.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../../jmeter/src/monitor/model" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/examples" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/protocol/jdbc" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/functions" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/protocol/mail" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/reports" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/protocol/http" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/core" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/monitor/components" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/components" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/protocol/tcp" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/protocol/ldap" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/protocol/jms" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/jorphan" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/protocol/java" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/protocol/ftp" />
+          <root url="file://$MODULE_DIR$/../../jmeter/src/junit" />
+        </SOURCES>
       </library>
     </orderEntry>
   </component>

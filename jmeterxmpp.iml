@@ -26,7 +26,11 @@
           <root url="jar://$MODULE_DIR$/lib/provided/ApacheJMeter_core.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="file://$MODULE_DIR$/../jmeter/src/core" />
+          <root url="file://$MODULE_DIR$/../jmeter/src/components" />
+          <root url="file://$MODULE_DIR$/../jmeter/src/functions" />
+        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library" scope="TEST">
