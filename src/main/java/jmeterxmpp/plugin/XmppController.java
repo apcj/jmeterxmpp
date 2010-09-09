@@ -6,24 +6,22 @@ import org.apache.jmeter.samplers.SampleEvent;
 import org.apache.jmeter.samplers.SampleListener;
 import org.apache.jmeter.testbeans.TestBean;
 import org.apache.jmeter.testelement.TestListener;
-import org.jivesoftware.smack.*;
-import org.jivesoftware.smack.packet.Message;
 
 public class XmppController extends GenericController implements TestBean, TestListener, SampleListener {
 
     private String xmppServerAddress;
-    private String destinationUser;
+    private String chatroomName;
 
     private long lastReportingTime;
 
     private static XmppClient xmppClient = new XmppClient();
 
-    public String getDestinationUser() {
-        return destinationUser;
+    public String getChatroomName() {
+        return chatroomName;
     }
 
-    public void setDestinationUser(String destinationUser) {
-        this.destinationUser = destinationUser;
+    public void setChatroomName(String chatroomName) {
+        this.chatroomName = chatroomName;
     }
 
     public String getXmppServerAddress() {
@@ -35,7 +33,7 @@ public class XmppController extends GenericController implements TestBean, TestL
     }
 
     public void testStarted() {
-        xmppClient.connect(xmppServerAddress, destinationUser);
+        xmppClient.connect(xmppServerAddress, chatroomName);
         xmppClient.sendMessage("Test Started");
     }
 
