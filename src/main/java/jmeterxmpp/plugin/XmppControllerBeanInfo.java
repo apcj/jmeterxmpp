@@ -9,7 +9,7 @@ public class XmppControllerBeanInfo extends BeanInfoSupport {
 
     // These names must agree case-wise with the variable and property names
     private static final String XMPP_SERVER_ADDRESS = "xmppServerAddress";
-    private static final String DESTINATION_USER = "destinationUser";
+    private static final String CHATROOM_NAME = "chatroomName";
 
     public XmppControllerBeanInfo() {
         super(XmppController.class);
@@ -17,10 +17,10 @@ public class XmppControllerBeanInfo extends BeanInfoSupport {
         ResourceBundle rb = (ResourceBundle) getBeanDescriptor().getValue(RESOURCE_BUNDLE);
 
         createPropertyGroup("xmpp_controller", new String[] {XMPP_SERVER_ADDRESS});
-        createPropertyGroup("xmpp_controller", new String[] {DESTINATION_USER});
+        createPropertyGroup("xmpp_controller", new String[] {CHATROOM_NAME});
 
         setPropertyDefaults(XMPP_SERVER_ADDRESS);
-        setPropertyDefaults(DESTINATION_USER);
+        setPropertyDefaults(CHATROOM_NAME);
     }
 
     private void setPropertyDefaults(String propertyIdentifier) {

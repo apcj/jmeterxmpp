@@ -1,23 +1,22 @@
 package jmeterxmpp.plugin;
 
-import org.jivesoftware.smack.*;
-import org.jivesoftware.smack.packet.Message;
+import org.jivesoftware.smack.XMPPConnection;
+import org.jivesoftware.smack.XMPPException;
+import org.jivesoftware.smackx.muc.MultiUserChat;
 
 public class XmppClient {
     private XMPPConnection connection;
-    private Chat chat;
+    private MultiUserChat multiUserChat;
 
-    public void connect(String xmppServerAddress, String destinationUser) {
+    public void connect(String xmppServerAddress, String chatroomName) {
         connection = new XMPPConnection(xmppServerAddress);
         try {
             connection.connect();
             connection.login("jmeter", "jmeter");
-            ChatManager chatmanager = connection.getChatManager();
-            chat = chatmanager.createChat(destinationUser, new MessageListener() {
-                public void processMessage(Chat chat, Message message) {
-                    System.out.println("Received message: " + message);
-                }
-            });
+            
+            multiUserChat = new MultiUserChat(connection, chatroomName);
+            multiUserChat.join("jmeter@" + xmppServerAddress, "jmeter");
+
         } catch (XMPPException e) {
             throw new RuntimeException(e);
         }
@@ -25,13 +24,14 @@ public class XmppClient {
 
     public void sendMessage(String message) {
         try {
-            chat.sendMessage(message);
+            multiUserChat.sendMessage(message);
         } catch (XMPPException e) {
             throw new RuntimeException(e);
         }
     }
 
     public void disconnect() {
+        multiUserChat.leave();
         connection.disconnect();
     }
 }
