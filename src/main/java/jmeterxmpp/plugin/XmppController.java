@@ -8,6 +8,9 @@ import org.apache.jmeter.testbeans.TestBean;
 import org.apache.jmeter.testelement.TestListener;
 import org.apache.jmeter.visualizers.SamplingStatCalculator;
 
+import static jmeterxmpp.plugin.MeasurementField.field;
+import static jmeterxmpp.plugin.MeasurementRecord.record;
+
 public class XmppController extends GenericController implements TestBean, TestListener, SampleListener {
 
     private static final int REPORTING_INTERVAL = 1000;
@@ -16,7 +19,7 @@ public class XmppController extends GenericController implements TestBean, TestL
     private String xmppServerAddress;
     private String chatroomName;
 
-    private SamplingStatCalculator samplingStatCalculator;
+    private SamplingStatCalculator calculator;
 
     private static XmppClient xmppClient = new XmppClient();
 
@@ -58,13 +61,15 @@ public class XmppController extends GenericController implements TestBean, TestL
     }
 
     public void sampleOccurred(SampleEvent sampleEvent) {
-        if (samplingStatCalculator == null) {
-            samplingStatCalculator = new SamplingStatCalculator(STATS_LABEL);
-        } else if (samplingStatCalculator.getElapsed() > REPORTING_INTERVAL) {
-            xmppClient.sendMessage(String.valueOf(samplingStatCalculator.getRate()));
-            samplingStatCalculator = new SamplingStatCalculator(STATS_LABEL);
+        if (calculator == null) {
+            calculator = new SamplingStatCalculator(STATS_LABEL);
+        } else if (calculator.getElapsed() > REPORTING_INTERVAL) {
+            xmppClient.sendMessage(record(
+                    field("throughput", calculator.getRate()),
+                    field("latency", calculator.getMean())).toJson());
+            calculator = new SamplingStatCalculator(STATS_LABEL);
         }
-        samplingStatCalculator.addSample(sampleEvent.getResult());
+        calculator.addSample(sampleEvent.getResult());
     }
 
     public void sampleStarted(SampleEvent sampleEvent) {
