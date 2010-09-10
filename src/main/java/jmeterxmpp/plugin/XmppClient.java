@@ -15,7 +15,7 @@ public class XmppClient {
             connection.login(jabberUsername, jabberPassword);
             
             multiUserChat = new MultiUserChat(connection, chatroomName);
-            multiUserChat.join(jabberUsername + xmppServerAddress, jabberUsername);
+            multiUserChat.join(jabberUsername  + "@" + xmppServerAddress, jabberUsername);
 
         } catch (XMPPException e) {
             throw new RuntimeException(e);
