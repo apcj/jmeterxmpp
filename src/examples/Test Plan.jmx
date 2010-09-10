@@ -27,9 +27,9 @@
       </ThreadGroup>
       <hashTree>
         <jmeterxmpp.plugin.XmppController guiclass="TestBeanGUI" testclass="jmeterxmpp.plugin.XmppController" testname="XMPP Controller" enabled="true">
-          <stringProp name="xmppServerAddress">jalewis.thoughtworks.com</stringProp>
+          <stringProp name="xmppServerAddress">alistair-jones-macbook-pro.local</stringProp>
           <stringProp name="destinationUser">don&apos;t care</stringProp>
-          <stringProp name="chatroomName">performance@chatrooms.jalewis.thoughtworks.com</stringProp>
+          <stringProp name="chatroomName">performance@chatrooms.alistair-jones-macbook-pro.local</stringProp>
           <stringProp name="jabberPassword">jmeter</stringProp>
           <stringProp name="jabberUsername">jmeter</stringProp>
         </jmeterxmpp.plugin.XmppController>
@@ -70,7 +70,7 @@
           <stringProp name="calcMode">all active threads</stringProp>
           <doubleProp>
             <name>throughput</name>
-            <value>1800.0</value>
+            <value>6000.0</value>
             <savedValue>0.0</savedValue>
           </doubleProp>
         </ConstantThroughputTimer>

@@ -4,26 +4,27 @@ import org.apache.jmeter.control.GenericController;
 import org.apache.jmeter.engine.event.LoopIterationEvent;
 import org.apache.jmeter.samplers.SampleEvent;
 import org.apache.jmeter.samplers.SampleListener;
+import org.apache.jmeter.samplers.SampleResult;
 import org.apache.jmeter.testbeans.TestBean;
 import org.apache.jmeter.testelement.TestListener;
 import org.apache.jmeter.visualizers.SamplingStatCalculator;
 
-import static jmeterxmpp.plugin.MeasurementField.field;
-import static jmeterxmpp.plugin.MeasurementRecord.record;
+import java.util.concurrent.*;
 
 public class XmppController extends GenericController implements TestBean, TestListener, SampleListener {
 
     private static final int REPORTING_INTERVAL = 1000;
-    private static final String STATS_LABEL = "STATS";
-
-    private String xmppServerAddress;
-    private String chatroomName;
 
     private SamplingStatCalculator calculator;
 
-    private static XmppClient xmppClient = new XmppClient();
+    public static XmppClient xmppClient = new XmppClient();
+    public static ConcurrentLinkedQueue<SampleResult> samplesQueue = new ConcurrentLinkedQueue<SampleResult>();
+
+    private String xmppServerAddress;
+    private String chatroomName;
     private String jabberUsername;
     private String jabberPassword;
+    private static ScheduledExecutorService scheduler;
 
     public String getJabberUsername() {
         return jabberUsername;
@@ -59,6 +60,8 @@ public class XmppController extends GenericController implements TestBean, TestL
 
     public void testStarted() {
         xmppClient.connect(xmppServerAddress, chatroomName, jabberUsername, jabberPassword);
+        scheduler = Executors.newScheduledThreadPool(1);
+        scheduler.scheduleAtFixedRate(new SendResultsJob(), REPORTING_INTERVAL, REPORTING_INTERVAL, TimeUnit.MILLISECONDS);
         xmppClient.sendMessage("Test Started");
     }
 
@@ -67,6 +70,7 @@ public class XmppController extends GenericController implements TestBean, TestL
     }
 
     public void testEnded() {
+        scheduler.shutdown();
         xmppClient.sendMessage("Test ended");
         xmppClient.disconnect();
     }
@@ -79,15 +83,7 @@ public class XmppController extends GenericController implements TestBean, TestL
     }
 
     public void sampleOccurred(SampleEvent sampleEvent) {
-        if (calculator == null) {
-            calculator = new SamplingStatCalculator(STATS_LABEL);
-        } else if (calculator.getElapsed() > REPORTING_INTERVAL) {
-            xmppClient.sendMessage(record(
-                    field("throughput", calculator.getRate()),
-                    field("latency", calculator.getMean())).toJson());
-            calculator = new SamplingStatCalculator(STATS_LABEL);
-        }
-        calculator.addSample(sampleEvent.getResult());
+        samplesQueue.add(sampleEvent.getResult());
     }
 
     public void sampleStarted(SampleEvent sampleEvent) {
@@ -97,6 +93,4 @@ public class XmppController extends GenericController implements TestBean, TestL
     public void sampleStopped(SampleEvent sampleEvent) {
         xmppClient.sendMessage("sample stopped");
     }
-
-
 }
