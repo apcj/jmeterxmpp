@@ -27,9 +27,11 @@
       </ThreadGroup>
       <hashTree>
         <jmeterxmpp.plugin.XmppController guiclass="TestBeanGUI" testclass="jmeterxmpp.plugin.XmppController" testname="XMPP Controller" enabled="true">
-          <stringProp name="xmppServerAddress">alistair-jones-macbook-pro.local</stringProp>
+          <stringProp name="xmppServerAddress">jalewis.thoughtworks.com</stringProp>
           <stringProp name="destinationUser">don&apos;t care</stringProp>
-          <stringProp name="chatroomName">performance@chatrooms.alistair-jones-macbook-pro.local</stringProp>
+          <stringProp name="chatroomName">performance@chatrooms.jalewis.thoughtworks.com</stringProp>
+          <stringProp name="jabberPassword">jmeter</stringProp>
+          <stringProp name="jabberUsername">jmeter</stringProp>
         </jmeterxmpp.plugin.XmppController>
         <hashTree/>
         <ResultCollector guiclass="SummaryReport" testclass="ResultCollector" testname="Summary Report" enabled="true">

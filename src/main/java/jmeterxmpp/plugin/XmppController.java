@@ -22,6 +22,24 @@ public class XmppController extends GenericController implements TestBean, TestL
     private SamplingStatCalculator calculator;
 
     private static XmppClient xmppClient = new XmppClient();
+    private String jabberUsername;
+    private String jabberPassword;
+
+    public String getJabberUsername() {
+        return jabberUsername;
+    }
+
+    public void setJabberUsername(String jabberUsername) {
+        this.jabberUsername = jabberUsername;
+    }
+
+    public String getJabberPassword() {
+        return jabberPassword;
+    }
+
+    public void setJabberPassword(String jabberPassword) {
+        this.jabberPassword = jabberPassword;
+    }
 
     public String getChatroomName() {
         return chatroomName;
@@ -40,7 +58,7 @@ public class XmppController extends GenericController implements TestBean, TestL
     }
 
     public void testStarted() {
-        xmppClient.connect(xmppServerAddress, chatroomName);
+        xmppClient.connect(xmppServerAddress, chatroomName, jabberUsername, jabberPassword);
         xmppClient.sendMessage("Test Started");
     }
 

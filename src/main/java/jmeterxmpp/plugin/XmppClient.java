@@ -8,14 +8,14 @@ public class XmppClient {
     private XMPPConnection connection;
     private MultiUserChat multiUserChat;
 
-    public void connect(String xmppServerAddress, String chatroomName) {
+    public void connect(String xmppServerAddress, String chatroomName, String jabberUsername, String jabberPassword) {
         connection = new XMPPConnection(xmppServerAddress);
         try {
             connection.connect();
-            connection.login("jmeter", "jmeter");
+            connection.login(jabberUsername, jabberPassword);
             
             multiUserChat = new MultiUserChat(connection, chatroomName);
-            multiUserChat.join("jmeter@" + xmppServerAddress, "jmeter");
+            multiUserChat.join(jabberUsername + xmppServerAddress, jabberUsername);
 
         } catch (XMPPException e) {
             throw new RuntimeException(e);
