@@ -10,12 +10,12 @@ public class MeasurementRecordTest {
     @Test
     public void shouldSerialiseSingleFieldToJson() {
         String json = record(field("latency", 2.4)).toJson();
-        assertEquals("{ latency: 2.4 }", json);
+        assertEquals("{ \"latency\": 2.4 }", json);
     }
 
     @Test
     public void shouldSerialiseMultipleFieldsToJson() {
         String json = record(field("latency", 2.4), field("throughput", 3)).toJson();
-        assertEquals("{ latency: 2.4, throughput: 3 }", json);
+        assertEquals("{ \"latency\": 2.4, \"throughput\": 3 }", json);
     }
 }
